@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="today">
+        <h4 class="today-date"></h4>
+        <h1 class="today-time"></h1>
+      </div>
+      <div class="user">
+        <form id="loginForm">
+          <input
+            class="nameInput"
+            type="text"
+            placeholder="Enter Your Name"
+            maxlength="12"
+          />
+          <small>*이름은 최대 12글자 입니다.</small>
+
+          <button class="loginForm-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+
+        <form id="greetingFrom" class="hidden">
+          <h4 class="greeting"></h4>
+          <h5 class="greeting-location hidden">현재위치 파주 온도30도</h5>
+          <button class="greetingFrom-btn hidden">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="app.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cfabfc7038.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
