@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="main">
       <div class="today">
         <h4 class="today-date"></h4>
         <h1 class="today-time"></h1>
@@ -29,12 +29,23 @@
 
         <form id="greetingFrom" class="hidden">
           <h4 class="greeting"></h4>
-          <h5 class="greeting-location hidden">현재위치 파주 온도30도</h5>
+          <h5 class="greeting-location hidden">
+            <i class="fa-solid fa-location-dot"></i>
+            <span id="city"></span>
+            <span id="weather"></span>
+          </h5>
           <button class="greetingFrom-btn hidden">
             <i class="fa-solid fa-xmark"></i>
           </button>
         </form>
       </div>
+    </div>
+    <div id="todoScreen" class="hidden">
+      <h1>Todo List</h1>
+      <ul class="toDoList"></ul>
+      <form id="todoForm">
+        <input type="text" placeholder="Todo List..." required />
+      </form>
     </div>
     <script src="app.js"></script>
     <script

@@ -3,16 +3,34 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.8);
+}
+ul {
+  list-style: none;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.1);
+}
 .hidden {
   display: none;
 }
+
 small {
   font-size: 10px;
   color: rgba(0, 0, 0, 0.3);
 }
-.container {
-  max-width: 1200px;
+
+.main {
+  width: 50%;
   height: 100vh;
   text-align: center;
   margin: 0 auto;
@@ -20,7 +38,9 @@ small {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
 .today-date {
   font-size: 20px;
 }
@@ -41,8 +61,7 @@ small {
   border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   font-size: 20px;
   padding-bottom: 10px;
-}
-.nameInput:valid {
+  background: none;
   text-align: center;
 }
 .nameInput::placeholder {
@@ -84,4 +103,118 @@ small {
   background-color: palevioletred;
   position: absolute;
   top: 80px;
+}
+.greeting-location {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.greeting-location > i {
+  margin-right: 5px;
+  color: rgba(255, 0, 0, 0.5);
+}
+
+.nexBtn {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  animation: move 1s ease-in-out infinite alternate;
+}
+.nexBtn span {
+  font-size: 50px;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+#todoScreen {
+  width: 50%;
+  height: 100vh;
+  text-align: center;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#todoScreen h1 {
+  font-size: 28px;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 25%;
+  padding: 5px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  color: white;
+}
+
+.toDoList {
+  width: 50%;
+  height: 250px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+ul > li > div {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.check-select {
+  text-decoration: overline;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+li {
+  padding: 8px;
+  width: 50%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+li > span {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+li > button {
+  border: 0;
+  background-color: palevioletred;
+  padding: 2px 4px;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+#todoForm input {
+  width: 100%;
+  padding: 5px;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  margin-top: 25px;
+  background: none;
+  text-align: center;
+}
+
+#todoForm input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+#todoForm input:focus {
+  outline: 0;
 }
