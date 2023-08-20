@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,600;10..48,800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +9,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   color: black;
+  font-family: "Bricolage Grotesque", sans-serif;
 }
 body > img {
   position: absolute;
@@ -241,6 +244,9 @@ li > button {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+  }
+  body > img {
+    height: 200%;
   }
   .main {
     width: 100%;
