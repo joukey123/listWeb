@@ -22,7 +22,16 @@ const todoForm = document.querySelector("#todoForm");
 const todoFormInput = document.querySelector("#todoForm input");
 const toDoList = document.querySelector(".toDoList");
 
+const main = document.querySelector(".main");
 // ===================================================
+
+//랜덤 배경
+
+const imges = ["1.jpg", "2.jpg", "3.jpg"];
+const changeImg = imges[Math.floor(Math.random() * imges.length)];
+const bgImge = document.createElement("img");
+bgImge.src = `img/${changeImg}`;
+document.body.appendChild(bgImge);
 
 //날짜 불러오기
 const current = new Date();
@@ -85,8 +94,12 @@ navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 
 //로그아웃
 const logout = () => {
-  localStorage.removeItem("username");
-  todoScreen.classList.add("hidden");
+  const question = confirm("로그아웃하면 저장된 LIST는 삭제됩니다.");
+  if (question) {
+    localStorage.removeItem("todos");
+    localStorage.removeItem("username");
+    todoScreen.classList.add("hidden");
+  }
 };
 
 //유저네임 체크
