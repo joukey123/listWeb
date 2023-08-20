@@ -21,7 +21,6 @@ const weather = document.querySelector("#weather");
 const todoForm = document.querySelector("#todoForm");
 const todoFormInput = document.querySelector("#todoForm input");
 const toDoList = document.querySelector(".toDoList");
-const checkBox = document.querySelectorAll("#toDoList>li>div");
 
 // ===================================================
 
@@ -75,7 +74,7 @@ const onGeoOk = (position) => {
     .then((response) => response.json())
     .then((data) => {
       city.innerText = data.name;
-      weather.innerText = `${data.weather[0].main} / ${data.main.temp}도`;
+      weather.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
     });
 };
 
@@ -112,17 +111,27 @@ const deleteTodo = (event) => {
   toDos = toDos.filter((todo) => todo.id !== parseInt(li.id));
   saveTodo();
 };
+const box = document.querySelectorAll("li div");
+
+const checkBox = (event) => {
+  const li = event.target.parentElement;
+  const span = li.querySelector("span");
+  const div = li.querySelector("div");
+  span.classList.toggle("check-select");
+  div.classList.toggle("bgColor");
+};
+
 const paintTodo = (newTodo) => {
   const li = document.createElement("li");
   li.id = newTodo.id;
-  const checkbox = document.createElement("div");
+  const box = document.createElement("div");
+  box.addEventListener("click", checkBox);
   const span = document.createElement("span");
   span.innerText = newTodo.text;
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "X";
   deleteButton.addEventListener("click", deleteTodo);
-
-  li.appendChild(checkbox);
+  li.appendChild(box);
   li.appendChild(span);
   li.appendChild(deleteButton);
   toDoList.appendChild(li);
@@ -149,11 +158,3 @@ if (saveToDos !== null) {
 }
 
 todoForm.addEventListener("submit", todoHandle);
-
-const aad = () => {
-  console.log("asd");
-};
-
-for (let i = 0; i < checkBox.length; i++) {
-  checkBox[i].addEventListener("click", aad);
-}
